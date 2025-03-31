@@ -6,10 +6,10 @@ public class AfricanViolet extends Plant{
     private String soilType; //idk if this is gonna be a class eathereee
     private int waterAmount;
 
-    public AfricanViolet(int plantId, String name, int waterLevel, String soilType, int waterAmount) {
-        super(plantId, name, waterLevel); //using the parent class
+    public AfricanViolet(int plantId, String name, String soilType) {
+        super(plantId, name); //using the parent class
         this.soilType = SoilType.LIGHT_SOIL.getDisplayName();  // Set to the specific soil type
-        this.waterAmount = waterAmount;
+        this.waterAmount =30; //test numebr
     }
 
     @Override
@@ -22,5 +22,10 @@ public class AfricanViolet extends Plant{
              this.lastWatered = new Date(); //updating to now
         }
         System.out.println(name + " watered. Current water level: " + waterLevel + "%.");
+    }
+
+    @Override
+    public String toString() {
+        return "Plant [id=" + id + ", name= " + name + ", getWaterLevel= " + getWaterLevel() + ", soil type"+soilType+", water amount "+waterAmount+"]";
     }
 }

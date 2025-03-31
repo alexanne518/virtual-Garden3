@@ -10,7 +10,7 @@ public abstract class Plant {
     protected int waterLevel; //idk if its gonna be a string or a number
     //was thinking well start it of at 0 and the max will be 100 so its easy to give a %
 
-    public Plant(int id, String name, int waterLevel) {
+    public Plant(int id, String name) {
         this.id = id;
         this.name = name;
         //idk if we will just set he last watered here or in the water method

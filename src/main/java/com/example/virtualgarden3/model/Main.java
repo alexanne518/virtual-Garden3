@@ -7,6 +7,7 @@ public class Main {
 
         System.out.println(newUser.toString());
 
-        Plant newplant = new Plant();
+        Plant newplant = new AfricanViolet (1, "AfricanViolet", SoilType.LIGHT_SOIL.getDisplayName());
+        System.out.println(newplant.toString());
     }
 }
