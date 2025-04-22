@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <!--its gonna need to get the java scrip-->
 </head>
 <body>
 <h1><%= "Hello World!" %>
