@@ -26,7 +26,7 @@ public class SchemaInitializer {
                     "CREATE TABLE IF NOT EXISTS users (" +
                             "  userId INT AUTO_INCREMENT PRIMARY KEY, " +  // trying auto incrementation
                             "  name VARCHAR(50) NOT NULL, " +
-                            "  password VARCHAR(50) NOT NULL, " +
+                            "  password VARCHAR(50) NOT NULL " +
                             //"  plantType VARCHAR(50) NOT NULL" +  // Stores the plant type the user chose, idkwe should just store the plant type or eveyrthing like wahat water level it is at
                             ")"
             );
