@@ -12,6 +12,7 @@ public class dbTestMain {
 
         //inserting a test user
         Connection conn = null;
+
         try{
             conn = DbUtil.getConnection();
 
