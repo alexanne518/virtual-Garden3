@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbUtil {
     // JDBC URL for H2 database - creates/uses a file in user home directory
-    private static final String JDBC_URL = "jdbc:h2:~/plantsDB;DB_CLOSE_DELAY=-1"; //plantDB is the name of the data base
+    private static final String JDBC_URL = "jdbc:h2:~/plantsDB8;DB_CLOSE_DELAY=-1"; //plantDB is the name of the data base
     private static final String USER = "sa";
     private static final String PASSWORD = "";
 
