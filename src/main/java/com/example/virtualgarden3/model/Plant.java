@@ -4,9 +4,9 @@ import java.util.Date;
 
 public abstract class Plant {
     //using protected so its accessible to only subclasses
-    protected int id; //for data base? idk if we need it
+    protected final int id; //I changed this for final so it can not be changed once set
     protected String name;
-    protected Date lastWatered; //idk if we should get it here or in the database
+    protected Date lastWatered; //is fine, from here we push it to the db
     protected int waterLevel; //idk if its gonna be a string or a number
     //was thinking well start it of at 0 and the max will be 100 so its easy to give a %
 
@@ -20,7 +20,7 @@ public abstract class Plant {
     public String getName(){return new String(name);}
     public int getWaterLevel() {return waterLevel;}
 
-    public abstract void waterPlant();
+    public abstract void waterPlant(int waterAmount);
 
     @Override
     public String toString() {

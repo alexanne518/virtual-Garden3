@@ -10,12 +10,36 @@ public class Soil {
     private int dryPer; //how dry is the soil
     private List<String> vitamins;
 
-    public Soil(){
-        this.weight = 0;
-        this.dryPer = 0;
-        this.vitamins = new ArrayList<>();
+    public Soil(int weight, int dryPer, List<String> vitamins){
+        this.weight = weight;
+        this.dryPer = dryPer;
+        this.vitamins = vitamins;
     }
 
-    
+    public int getWeight() {
+        return weight;
+    }
+    public int getDryPer() {
+        return dryPer;
+    }
+    public List<String> getVitamins() {
+        return vitamins;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    public void setDryPer(int dryPer) {
+        this.dryPer = dryPer;
+    }
+    public void setVitamins(List<String> vitamins) {
+        this.vitamins = vitamins;
+    }
+
+    //public int WaterSoil(int ml){
+    //
+    //}
+
+
 
 }
