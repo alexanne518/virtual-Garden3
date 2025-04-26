@@ -11,8 +11,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet("/menu")
-public class MenuServlet  extends HttpServlet {
+@WebServlet("/PlantSelection")
+public class PlantSelectionServlet extends HttpServlet {
 
 
     @Override
@@ -20,14 +20,12 @@ public class MenuServlet  extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        request.getRequestDispatcher("/menu.jsp").forward(request, response);
+        request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("menu initialized");
-        request.getRequestDispatcher("/menu.jsp").forward(request, response);
+        System.out.println("PlantSelection initialized");
+        request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
     }
-
-
-
 }

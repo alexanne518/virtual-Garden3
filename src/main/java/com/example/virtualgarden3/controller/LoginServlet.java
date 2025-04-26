@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@WebServlet("/Login")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
     @Override
@@ -45,12 +45,12 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/home");
             }else{
                 request.setAttribute("error", "Invalid username or password");
-                request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
+            request.getRequestDispatcher("/Login.jsp").forward(request, response);
         }
         finally {
             DbUtil.closeQuietly(conn);
@@ -59,6 +59,8 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        request.getRequestDispatcher("/WEB-INF/Login.jsp").forward(request, response);
+        System.out.println("doGet testttttt");
+
+        request.getRequestDispatcher("/Login.jsp").forward(request, response);
     }
 }
