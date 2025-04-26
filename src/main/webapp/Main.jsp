@@ -15,7 +15,7 @@
                 // Hide the popup
                 document.getElementById("plant-selection-popup").style.display = "none";
                 // Show the homepage buttons
-                document.getElementById("homepage-buttons").style.display = "block";
+                //document.getElementById("homepage-buttons").style.display = "block";
             } else {
                 alert("This plant is not available yet!");
             }
@@ -30,16 +30,17 @@
             <h2>Select Your Plant</h2>
             <input type="hidden" name="action" value="plantSelection">
 
-            <!-- Radio buttons for plant selection -->
+            <!-- Radio buttons for plant selection
             <input type="radio" name="selectedPlant" value="african-violet" checked> African Violet<br>
             <input type="radio" name="selectedPlant" value="cactus" disabled> Cactus (Coming Soon)<br>
             <input type="radio" name="selectedPlant" value="orchid" disabled> Orchid (Coming Soon)<br>
+            -->
 
             <button type="submit">Submit</button>
         </form>
     </div>
 
-    <!-- Homepage should be hidden until plant is selected but idk how to do that -->
+    <!-- Homepage should be hidden until plant is selected but idk how to do that
     <div id="homepage-buttons">
         <h1>Plant Care</h1>
 
@@ -53,5 +54,6 @@
             <button type="submit">Show Plant Stats</button>
         </form>
     </div>
+    -->
 </body>
 </html>

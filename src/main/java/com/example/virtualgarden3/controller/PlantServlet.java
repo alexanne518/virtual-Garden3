@@ -44,7 +44,7 @@ public class PlantServlet  extends HttpServlet {
         else if("waterPlant".equals(action)){
             Plant plant = (Plant) session.getAttribute("currentPlant");
             if(plant != null){
-                plant.waterPlant(); // This will call the specific implementation
+                plant.waterPlant(100); // This will call the specific implementation
                 session.setAttribute("message", plant.getName() + " watered! Current level: " + plant.getWaterLevel() + "%");
                 session.setAttribute("currentPlant", plant); // Update in session
             }
@@ -52,7 +52,7 @@ public class PlantServlet  extends HttpServlet {
         }
         else if("showStats".equals(action)){
             System.out.println("DEBUG - Forwarding to PlantStatus.jsp");
-            request.getRequestDispatcher("/WEB-INF/PlantStatus.jsp").forward(request, response);
+            request.getRequestDispatcher("/PlantStatus.jsp").forward(request, response);
             return;
         }
 
@@ -66,11 +66,11 @@ public class PlantServlet  extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (session.getAttribute("userId") == null) {
-            response.sendRedirect(request.getContextPath() + "/Login");
+            response.sendRedirect(request.getContextPath() + "/Login.jsp");
             return;
         }
 
-        request.getRequestDispatcher("/WEB-INF/Main.jsp").forward(request, response);
+        request.getRequestDispatcher("/Main.jsp").forward(request, response);
     }
 }
 
