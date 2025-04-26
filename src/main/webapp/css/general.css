@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'DePixelHalbfett';
+    src: url('../fonts/DePixelHalbfett.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Winky';
+    src: url('../fonts/WinkyRough-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Clown';
+    src: url('../fonts/EnterTheClownDEMO-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'OceanSummer';
+    src: url('../fonts/Ocean Summer.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Leaves';
+    src: url('../fonts/Withered Leaves.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
