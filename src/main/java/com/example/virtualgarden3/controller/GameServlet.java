@@ -32,8 +32,13 @@ public class GameServlet  extends HttpServlet {
         Plant plant = (Plant) session.getAttribute("plant"); //create a new flower, or get it its one was already there in the session
 
 
-        request.getRequestDispatcher("/WEB-INF/Main.jsp").forward(request, response);
+        request.getRequestDispatcher("/Main.jsp").forward(request, response);
     }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/Main.jsp").forward(request, response);
+    }
+
 
 
 }

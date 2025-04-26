@@ -34,10 +34,10 @@ public class SchemaInitializer {
 
             stmt.execute(
                     "CREATE TABLE IF NOT EXISTS plant (" +
-                            "  plantId int PRIMARY KEY, " +
+                            "  plantId INT AUTO_INCREMENT PRIMARY KEY, " +
                             "  userId INT NOT NULL, " + //idk what to do about the FK
                             "  type VARCHAR(100) NOT NULL, " +
-                            "  water VARCHAR(100) NOT NULL, " + //how much water it had the last time they were logged in? idk if we were ogin with % number or high low
+                            "  waterlevel INT NOT NULL CHECK (waterLevel BETWEEN 0 AND 100), " + //how much water it had the last time they were logged in? idk if we were ogin with % number or high low
                             "   CONSTRAINT fk_user FOREIGN KEY (userId) REFERENCES users(userId) ON DELETE CASCADE" +
                             ")"
             );
@@ -52,6 +52,8 @@ public class SchemaInitializer {
         finally {
             DbUtil.closeQuietly(conn);
         }
+
+
     }
 }
 
