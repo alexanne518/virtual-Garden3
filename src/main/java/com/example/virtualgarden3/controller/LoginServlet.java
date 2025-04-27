@@ -42,12 +42,18 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("userId", rs.getString("userId"));
                 session.setAttribute("username", rs.getString("name"));
 
-                response.sendRedirect(request.getContextPath() + "/home");
-            }else{
-                request.setAttribute("error", "Invalid username or password");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
+                session.setAttribute("user", "authenticated"); //to be able to chekc that thers a user logged in
+
+                //response.sendRedirect(request.getContextPath() + "/home"); //TODO:redirect to plant selection
+                response.sendRedirect("PlantSelection.jsp");
+
             }
-        } catch (SQLException e) {
+            else{
+                request.setAttribute("error", "Invalid username or password");
+                request.getRequestDispatcher("/Login.jsp").forward(request, response);
+            }
+        }
+        catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/Login.jsp").forward(request, response);

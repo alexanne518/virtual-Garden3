@@ -25,8 +25,8 @@ public class dbTestMain {
             if(count == 0){
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO users (name, password) VALUES (?, ?)");
 
-                stmt.setString(1, "testperson");
-                stmt.setString(2, "testpassword");
+                stmt.setString(1, "sa");
+                stmt.setString(2, "sa");
                 stmt.executeUpdate();
 
                 out.println("test user inserted");
@@ -45,7 +45,7 @@ public class dbTestMain {
         try{
             conn = DbUtil.getConnection();
 
-            PreparedStatement checksStmt = conn.prepareStatement("SELECT * FROM users WHERE name = 'testperson' ");
+            PreparedStatement checksStmt = conn.prepareStatement("SELECT * FROM users WHERE name = 'sa' ");
             ResultSet rs = checksStmt.executeQuery();
 
             if (rs.next()){
