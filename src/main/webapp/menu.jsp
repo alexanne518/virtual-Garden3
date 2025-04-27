@@ -121,11 +121,14 @@
         <div id="title">
             <p>VIRTUAL GARDEN</p>
         </div>
-        <div id="menu">
-            <button>SELECT PLANT</button>
-            <button>PLAY</button>
-            <button>LOGIN</button>
-        </div>
+
+        <form action="menu" method="post" >
+            <div id="menu">
+                <button type="submit" name="action" value="selectPlant" >SELECT PLANT</button>
+                <button type="submit" name="action" value="play" >PLAY</button>
+                <button type="submit" name="action" value="login">LOGIN</button> <!--check if the location is right-->
+            </div>
+        </form>
     </div>
 
 </body>

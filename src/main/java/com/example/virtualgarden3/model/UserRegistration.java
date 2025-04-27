@@ -14,8 +14,8 @@ public class UserRegistration {
     }
 
     public int getId() {return id;}
-    public String getName() {return new String(name);} //copy so it cant et changed
-    //dont think we need a get password because u dont wanna show it
+    public String getName() {return new String(name);}
+    public String getPassword() {return new String(password);}
 
     @Override
     public String toString() {

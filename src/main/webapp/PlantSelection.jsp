@@ -85,24 +85,25 @@
 <body>
   <div id="backgroundImage"></div>
   <div id="menu">
-    <div id="plantsContainer">
-    <div style="display: flex; flex-direction: column;">
-      <img src="img/AfricanVioletPrevw.png" alt="AfricanVioletPw" class="plantpw">
-      <h5>African Violet</h5>
-      <button>SELECT</button>
-    </div>
-      <div style="display: flex; flex-direction: column;">
-        <img src="img/CactusPreview.png" alt="Cactuspw" class="plantpw">
-        <h5>(Not Available)</h5>
-        <button>SELECT</button>
-      </div>
-      <div style="display: flex; flex-direction: column;">
-        <img src="img/orquideaprevw.png" alt="Orquideapw" class="plantpw">
-        <h5>(Not Available)</h5>
-        <button>SELECT</button>
-      </div>
-    </div>
-
+      <form action="PlantSelection" method="post">
+        <div id="plantsContainer">
+          <div style="display: flex; flex-direction: column;">
+            <img src="img/AfricanVioletPrevw.png" alt="AfricanVioletPw" class="plantpw">
+            <h5>African Violet</h5>
+            <button type="submit" name="plantType" value="african-violet">SELECT</button>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <img src="img/CactusPreview.png" alt="Cactuspw" class="plantpw">
+            <h5>(Not Available)</h5>
+            <button>SELECT</button>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <img src="img/orquideaprevw.png" alt="Orquideapw" class="plantpw">
+            <h5>(Not Available)</h5>
+            <button>SELECT</button>
+          </div>
+        </div>
+      </form>
   </div>
 
 
