@@ -90,7 +90,7 @@
           <div style="display: flex; flex-direction: column;">
             <img src="img/AfricanVioletPrevw.png" alt="AfricanVioletPw" class="plantpw">
             <h5>African Violet</h5>
-            <button type="submit" name="plantType" value="african-violet">SELECT</button>
+            <button type="submit" name="plantId" value="0">SELECT</button>
           </div>
           <div style="display: flex; flex-direction: column;">
             <img src="img/CactusPreview.png" alt="Cactuspw" class="plantpw">

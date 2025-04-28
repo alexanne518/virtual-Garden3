@@ -1,6 +1,5 @@
 package com.example.virtualgarden3.controller;
 
-import com.example.virtualgarden3.dao.UsersDAO;
 import com.example.virtualgarden3.model.UserRegistration;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,7 +11,6 @@ import java.io.IOException;
 
 @WebServlet("/signup")
 public class SignUpServlet extends HttpServlet {
-    private UsersDAO userDAO = new UsersDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +25,7 @@ public class SignUpServlet extends HttpServlet {
 
         UserRegistration newUser = new UserRegistration(0, name, password);
         System.out.println(newUser);
-        boolean success = userDAO.saveUser(newUser);
+        boolean success = false;
 
         if (success) {
             response.sendRedirect("Login"); // After sign up, redirecting to login so the user can conti

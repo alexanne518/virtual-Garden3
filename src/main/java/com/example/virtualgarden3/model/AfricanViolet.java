@@ -4,12 +4,11 @@ import java.awt.*;
 import java.util.Date;
 
 public class AfricanViolet extends Plant{
-    private SoilType soilType; //idk if this is gonna be a class eathereee
+    private SoilType soilType;
 
 
-    public AfricanViolet(int plantId, String name, SoilType soilType) {
+    public AfricanViolet(int plantId, String name) {
         super(plantId, name); //using the parent class
-        this.soilType = SoilType.LIGHT_SOIL;  // Set to the specific soil type
     }
 
     @Override
