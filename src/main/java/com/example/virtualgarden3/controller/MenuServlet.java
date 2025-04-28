@@ -29,13 +29,15 @@ public class MenuServlet  extends HttpServlet {
             if (action.equals("selectPlant")) {
                 request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
             } else if (action.equals("play")) {
-                System.out.println("Unhandled action: " + action);
-                //request.getRequestDispatcher("/Login.jsp").forward(request, response);
-
-            } else if (action.equals("login")) {
+                Plant plant = (Plant) session.getAttribute("plant");
+                if (plant == null) {
+                    request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
+                } else {
+                    request.setAttribute("plant", plant);
+                    request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
+                }
             } else {
                 request.getRequestDispatcher("/menu.jsp").forward(request, response);
-
             }
 
         }

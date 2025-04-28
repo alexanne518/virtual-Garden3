@@ -13,17 +13,22 @@ public class AfricanViolet extends Plant{
 
     @Override
     public void waterPlant(int waterAmount) {
-        String answer;
         if (waterLevel + waterAmount < 100) {
             waterLevel += waterAmount; // Ferns require a lot of water  -- AFRICAN VIOLET IS NOT A FERN!!!!
-
             System.out.println(name + " Watered. Current water level: " + waterLevel + "%.");
         }
         else{
             waterLevel = 100;
         }
         this.lastWatered = new Date(); //updating to now
-        System.out.println("the plant is already at 100% do you want to continue?");
+    }
+    @Override
+    public void feedPlant(int amount) {
+        setVitaminsLevel(amount + vitaminsLevel);
+    }
+    @Override
+    public void fertilizePlant(int amount) {
+        setFertilizerLevel(amount + fertilizerLevel);
     }
 
     @Override

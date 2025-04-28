@@ -1,3 +1,4 @@
+<%@ page import="com.example.virtualgarden3.model.Plant" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -94,12 +95,12 @@
             font-size: 1em;
             color: white;
             gap: 3px;
+            align-items: center;
+            text-align: center;
         }
         #menu1 button {
             background-color: transparent;
             border: none;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             cursor: pointer;
         }
@@ -120,10 +121,10 @@
 
     <div id="menu">
         <p>Stats:</p>
-        <p>Water level: 100%</p>
-        <p>Vitamins: nice</p>
-        <p>Growing speed: 50%</p>
-        <p>General health:</p>
+        <p>Water level: <%= ((Plant) request.getAttribute("plant")).getWaterLevel() %>%</p>
+        <p>Vitamins: <%= ((Plant) request.getAttribute("plant")).getVitaminsLevel() %> / 5</p>
+        <p>Growing speed: <%= ((Plant) request.getAttribute("plant")).getFertilizerLevel() * 3 + 10 %></p>
+        <p>General health: <%= ((Plant) request.getAttribute("plant")).getHealth() %> </p>
     </div>
 
     <div id="plandiv">
@@ -133,19 +134,21 @@
 
 
     <div id="menu1">
-        <p>Stats:</p>
-        <button id="watercanBtn">
+        <p>Actions</p>
+        <form action="virtualgarden" method="post" >
+        <button id="watercanBtn" name="action" value="water">
             <img src="./img/watercan.png" alt="watercan" width="150px">
         </button>
         <h5>Water Can</h5>
-        <button id="fertilizerBtn">
+        <button id="fertilizerBtn" name="action" value ="fertilizante" >
             <img src="./img/fertilizer.png" alt="fertilizer" width="100px">
         </button>
         <h5>Fertilizer</h5>
-        <button id="plantFoodBtn">
+        <button id="plantFoodBtn" name="action" value = "feed" >
             <img src="./img/plantFood.png" alt="plantfood" width="100px">
         </button>
         <h5>Plant Food</h5>
+        </form>
     </div>
 
 </div>
