@@ -128,7 +128,7 @@
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
 
-        <button type="submit" class="login-btn">Log In</button>
+        <button type="submit" class="login-btn">sign up</button>
 
     </form>
 </div>

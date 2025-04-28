@@ -23,7 +23,7 @@ public class ApplicationData {
     private static ApplicationData instance;
 
     private ApplicationData() {
-        accounts.put(0, new Account(0, "User1", "User1234"));
+        accounts.put(0, new Account(0, "sa", "sa"));
         plants.put(0, new Pair<>(accounts.get(0), new AfricanViolet(0, "Violenta")));
     }
 

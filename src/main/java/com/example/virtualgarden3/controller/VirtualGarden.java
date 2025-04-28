@@ -24,37 +24,31 @@ public class VirtualGarden extends HttpServlet {
         Plant plant = (Plant) session.getAttribute("plant");
 
 
-        if (user == null) {
-            request.getRequestDispatcher("/Login.jsp").forward(request, response);
-            return;
-        }
-        if (plant == null) {
-            request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
-            return;
-        }
+        if("waterCan".equals(action)) {
+            System.out.println("watering");
+            plant.waterPlant(30); // Increase water by 30
+            session.setAttribute("message", "Watered! Water level: " + plant.getWaterLevel() + "%");
 
-        request.setAttribute("plant", plant);
+        }
+        else if("fertilizer".equals(action)) {
+            System.out.println("fertilizing");
+            plant.fertilizePlant(20); // Increase fertilizer level by 20
+            session.setAttribute("message", "Fertilized! Fertilizer level: " + plant.getFertilizerLevel() + "%");
 
-        if (action.equals("water")) {
-            plant.waterPlant(10);
-            request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
         }
-        else if (action.equals("fertilizante")) {
-            plant.fertilizePlant(1);
-            request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
-        }
-        else if (action.equals("feed")) {
-            plant.feedPlant(1);
-            request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
+        else if ("plantFood".equals(action)) {
+            System.out.println("feeding");
+            plant.feedPlant(15); // Increase vitamins level by 15
+            session.setAttribute("message", "Fed! Vitamins level: " + plant.getVitaminsLevel() + "%");
+
         }
 
 
-
+        request.getRequestDispatcher("VirtualGarden.jsp").forward(request, response);
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("game initialized");
         HttpSession session = request.getSession();
         Plant plant = (Plant) session.getAttribute("plant");
         if (plant == null) {

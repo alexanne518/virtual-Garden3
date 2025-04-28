@@ -23,7 +23,7 @@ public class MenuServlet  extends HttpServlet {
         HttpSession session = request.getSession();
         String action = request.getParameter("action");
 
-        if (session.getAttribute("user") == null) {
+        if (session.getAttribute("user") == null) { //kinda repalces the login button
             request.getRequestDispatcher("/Login.jsp").forward(request, response);
         } else {
             if (action.equals("selectPlant")) {
@@ -36,10 +36,10 @@ public class MenuServlet  extends HttpServlet {
                     request.setAttribute("plant", plant);
                     request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
                 }
-            } else {
+            }
+            else {
                 request.getRequestDispatcher("/menu.jsp").forward(request, response);
             }
-
         }
     }
 

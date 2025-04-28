@@ -95,12 +95,12 @@
             font-size: 1em;
             color: white;
             gap: 3px;
-            align-items: center;
-            text-align: center;
         }
         #menu1 button {
             background-color: transparent;
             border: none;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             cursor: pointer;
         }
@@ -121,11 +121,13 @@
 
     <div id="menu">
         <p>Stats:</p>
-        <p>Water level: <%= ((Plant) request.getAttribute("plant")).getWaterLevel() %>%</p>
-        <p>Vitamins: <%= ((Plant) request.getAttribute("plant")).getVitaminsLevel() %> / 5</p>
-        <p>Growing speed: <%= ((Plant) request.getAttribute("plant")).getFertilizerLevel() * 3 + 10 %></p>
-        <p>General health: <%= ((Plant) request.getAttribute("plant")).getHealth() %> </p>
+        <p>Water level: ${plant.waterLevel}%</p>
+        <p>Vitamins: ${plant.vitaminsLevel} / 5</p>
+        <p>Growing speed: ${plant.fertilizerLevel * 3 + 10}%</p>
+        <p>General health: ${plant.health}%</p>
+
     </div>
+
 
     <div id="plandiv">
         <img id="plant" src="./img/babyviolet.png" alt="planta">
@@ -134,20 +136,24 @@
 
 
     <div id="menu1">
-        <p>Actions</p>
-        <form action="virtualgarden" method="post" >
-        <button id="watercanBtn" name="action" value="water">
-            <img src="./img/watercan.png" alt="watercan" width="150px">
-        </button>
-        <h5>Water Can</h5>
-        <button id="fertilizerBtn" name="action" value ="fertilizante" >
-            <img src="./img/fertilizer.png" alt="fertilizer" width="100px">
-        </button>
-        <h5>Fertilizer</h5>
-        <button id="plantFoodBtn" name="action" value = "feed" >
-            <img src="./img/plantFood.png" alt="plantfood" width="100px">
-        </button>
-        <h5>Plant Food</h5>
+        <form id="toolsForm" action="virtualgarden" method="post">
+
+            <p>Stats:</p>
+            <button id="watercanBtn" type="submit" name="action" value="waterCan">
+                <img src="./img/watercan.png" alt="watercan" width="150px">
+            </button>
+            <h5>Water Can</h5>
+
+            <button id="fertilizerBtn" type="submit" name="action" value="fertilizer">
+                <img src="./img/fertilizer.png" alt="fertilizer" width="100px">
+            </button>
+            <h5>Fertilizer</h5>
+
+            <button id="plantFoodBtn" type="submit" name="action" value="plantFood" >
+                <img src="./img/plantFood.png" alt="plantfood" width="100px">
+            </button>
+            <h5>Plant Food</h5>
+
         </form>
     </div>
 

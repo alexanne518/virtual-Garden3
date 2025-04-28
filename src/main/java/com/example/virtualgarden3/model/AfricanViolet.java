@@ -26,6 +26,8 @@ public class AfricanViolet extends Plant{
     public void feedPlant(int amount) {
         setVitaminsLevel(amount + vitaminsLevel);
     }
+
+
     @Override
     public void fertilizePlant(int amount) {
         setFertilizerLevel(amount + fertilizerLevel);
