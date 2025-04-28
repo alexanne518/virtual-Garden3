@@ -35,15 +35,16 @@ public class PlantSelectionServlet extends HttpServlet {
             Plant plant = ApplicationData.getInstance().getPlant(plantId, user);
             if (plant != null) {
                 session.setAttribute("plant", plant);
+                request.setAttribute("plant", plant);
                 request.getRequestDispatcher("/VirtualGarden.jsp").forward(request, response);
+                return;
             }
         } catch (Exception e) {
-            request.getRequestDispatcher("/PlantSelectionServlet.jsp").forward(request, response);
+            e.printStackTrace();
+            request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
             return;
         }
-
-    request.getRequestDispatcher("/PlantSelectionServlet.jsp").forward(request, response);
-
+    request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
     }
 
     @Override
