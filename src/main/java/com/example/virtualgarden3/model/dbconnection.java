@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class dbconnection {
+
     public static void main(String[] args) {
         String connectionUrl =
                 "jdbc:sqlserver://yourserver.database.windows.net:1433;"
@@ -16,6 +17,4 @@ public class dbconnection {
                         + "trustServerCertificate=true;"
                         + "loginTimeout=30;";
     }
-
-
 }

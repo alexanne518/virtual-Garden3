@@ -15,6 +15,14 @@ import java.io.IOException;
 public class VirtualGarden extends HttpServlet {
 
 
+    /**
+     * handels all tthe post for vertual garden game page, gets action value user from session and also plant
+     * handels if the user wants to water, fertilize, or feed plant
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -46,11 +54,20 @@ public class VirtualGarden extends HttpServlet {
 
         request.getRequestDispatcher("VirtualGarden.jsp").forward(request, response);
     }
+
+    /**
+     * handels the get request for the veritual garden game page, sees if the plant is null if so users goes back to plant selection page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("game initialized");
         HttpSession session = request.getSession();
         Plant plant = (Plant) session.getAttribute("plant");
+
         if (plant == null) {
             request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
             return;

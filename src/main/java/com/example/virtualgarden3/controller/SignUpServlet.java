@@ -12,11 +12,26 @@ import java.io.IOException;
 @WebServlet("/signup")
 public class SignUpServlet extends HttpServlet {
 
+    /**
+     * handels to get request for the signup page and redirects to the signup page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/SignUp.jsp").forward(request, response);
     }
 
+    /**
+     * handels the get request for the signup page, gets the username and password values uses useRegistration to create new user
+     * after checks if it was success ufl and gpes to login page if not sends an error message and stays on the signup page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

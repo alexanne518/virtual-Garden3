@@ -12,6 +12,12 @@ public class Account {
         this.password = password;
     }
 
+    /**
+     * to check login and authenticate the username and password
+     * @param username used to check
+     * @param password used to check
+     * @return if the username and password input my the user are equal to our username and password
+     */
     public boolean tryAuthenticate(String username, String password) {
         return this.username.equals(username) && this.password.equals(password);
     }

@@ -19,7 +19,15 @@ import java.util.List;
 @WebServlet("/PlantSelection")
 public class PlantSelectionServlet extends HttpServlet {
 
-
+    /**
+     * first needs to check if user is null form the session attribute if true goes back to login page
+     * then haldels adding the new plant, if no error goes to vritual garden page
+     * if any errors stays on plant selection
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -44,17 +52,26 @@ public class PlantSelectionServlet extends HttpServlet {
             request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
             return;
         }
-    request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
+
+        request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
     }
 
+    /**
+     * handles th plant selcetion get
+     * gets the user forn session checks if its null if so goes back to login if not can u=open the plant selection page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         if (request.getSession().getAttribute("username") == null) {
             request.getRequestDispatcher("/Login.jsp").forward(request, response);
-        } else
-        {
+        }
+        else {
             request.getRequestDispatcher("/PlantSelection.jsp").forward(request, response);
         }
     }

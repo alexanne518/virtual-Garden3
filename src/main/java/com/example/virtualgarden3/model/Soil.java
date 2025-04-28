@@ -36,8 +36,4 @@ public class Soil {
         this.vitamins = vitamins;
     }
 
-    //public int WaterSoil(int ml){
-    //
-    //}
-
 }

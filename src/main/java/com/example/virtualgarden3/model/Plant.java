@@ -21,6 +21,10 @@ public abstract class Plant {
         this.lastWatered = new Date();
     }
 
+    /**
+     * calculates the health of the plant based of of the water level out of 100, and the vitamine level out of 5
+     * @return % health of plant
+     */
     public int getHealth() {
         float waterComponent = waterLevel / 100f;
         waterComponent = 1 - 2 * Math.abs(waterComponent - 0.5f);
@@ -35,14 +39,27 @@ public abstract class Plant {
     public int getWaterLevel() {return waterLevel;}
     public int getVitaminsLevel() {return vitaminsLevel;}
     public int getFertilizerLevel() {return fertilizerLevel;}
+
+    /**
+     * sets the new water amount keeping it between 0-100
+     * @param waterLevel amount of water that will be added
+     */
     public void setWaterLevel(int waterLevel) {
         this.waterLevel = Math.min(100, Math.max(0, waterLevel)); // has to be between 0 to 100
     }
 
+    /**
+     * sets new vitamine level keeping the vitamine level between 0-5
+     * @param vitaminsLevel gets new vitimaine new
+     */
     public void setVitaminsLevel(int vitaminsLevel) {
         this.vitaminsLevel = Math.max(0, Math.min(5, vitaminsLevel));
     }
 
+    /**
+     * set the new fertilizer amount keeping it bewteen 0-20
+     * @param amount gets the amount of fertilizer that will be added
+     */
     public void setFertilizerLevel(int amount) {
         this.fertilizerLevel = Math.max(0, Math.min(20, amount));
     }
@@ -50,9 +67,14 @@ public abstract class Plant {
     public abstract void waterPlant(int waterAmount);
 
     public abstract void feedPlant(int amount);
+
     public abstract void fertilizePlant(int amount);
 
 
+    /**
+     *
+     * @return string wth plant id, name, and water level
+     */
     @Override
     public String toString() {
         return "Plant [id=" + id + ", name=" + name + ", getWaterLevel= " + getWaterLevel() + "]";

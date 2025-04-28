@@ -16,7 +16,15 @@ import java.util.List;
 @WebServlet("/menu")
 public class MenuServlet  extends HttpServlet {
 
-
+    /**
+     * checs if the user is null if so goes back login
+     * handels if the user wants to login, select a plant or start playing
+     * checks the conditions and requierments for these functions
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -43,7 +51,13 @@ public class MenuServlet  extends HttpServlet {
         }
     }
 
-
+    /**
+     * opens the menu page dosnt check anything becuase thers no need
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("menu initialized");

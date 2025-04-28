@@ -18,6 +18,13 @@ import java.sql.SQLException;
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 
+    /**
+     * gets the user and password from the login form checks if the user is null to begin with becuase if thats true theres no need
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String username = request.getParameter("username");

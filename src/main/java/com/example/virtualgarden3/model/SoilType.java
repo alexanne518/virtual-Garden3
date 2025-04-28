@@ -21,8 +21,11 @@ public enum SoilType {
         return displayName;
     }
 
-
-    // Helper method to find by display name
+    /**
+     * Helper method to find by display name
+     * @param displayName of the type of soil
+     * @return the soil
+     */
     public static SoilType fromDisplayName(String displayName) {
         for (SoilType soil : values()) {
             if (soil.displayName.equals(displayName)) {
